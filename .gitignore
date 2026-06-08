@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# promo video (excluded for now — too large to commit)
+/public/roadmap-pe-promo.mp4
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
