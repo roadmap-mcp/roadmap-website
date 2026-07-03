@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-const GITHUB_URL = "https://github.com/b2it/roadmap-pe";
+const GITHUB_URL = "https://github.com/roadmap-mcp/roadmap";
 
 export default function Home() {
   return (
@@ -36,12 +36,13 @@ function SiteNav() {
           <a href="#demo" className="hover:text-brand">Demo</a>
           <a href="#features" className="hover:text-brand">Features</a>
           <a href="#how" className="hover:text-brand">How it works</a>
+          <a href="/download" className="hover:text-brand">Download</a>
         </div>
         <a
-          href={GITHUB_URL}
+          href="/download"
           className="ml-auto rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-600 md:ml-0"
         >
-          Get it on GitHub
+          Download
         </a>
       </nav>
     </header>
@@ -71,8 +72,8 @@ function Hero() {
           <a href="#demo" className="rounded-lg bg-white px-6 py-3 font-medium text-brand transition hover:bg-slate-100">
             Watch the 45s demo
           </a>
-          <a href={GITHUB_URL} className="rounded-lg border border-white/30 px-6 py-3 font-medium text-white transition hover:bg-white/10">
-            Get started
+          <a href="/download" className="rounded-lg border border-white/30 px-6 py-3 font-medium text-white transition hover:bg-white/10">
+            Download
           </a>
         </div>
       </div>
