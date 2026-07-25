@@ -6,6 +6,8 @@ const ALL_TITLES = [
   "Context Engineering",
   "Source Enrichment & Augmentation",
   "AI-Assisted Roundtrip",
+  "AI-Assisted Test Design",
+  "The Company Brain",
 ];
 
 test.describe("Patterns overview", () => {

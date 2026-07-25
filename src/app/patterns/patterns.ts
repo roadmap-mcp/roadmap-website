@@ -62,9 +62,26 @@ export const patterns: Pattern[] = [
     solution:
       "Connect the sources and render them down at the point of use: Confluence pages and Jira issues stripped to their substance as markdown, git commits summarized, repo files browsable inline. Enrich each item with the metadata and tags that make it findable, then fold it into a context — so augmentation is a step in composition, not a separate pipeline to maintain.",
     considerFirst: ["context-engineering"],
-    considerNext: ["ai-assisted-roundtrip"],
+    considerNext: ["ai-assisted-roundtrip", "company-brain"],
     plugins: ["jira", "context", "ai"],
     config: "Atlassian connection, Git Repos, AI providers.",
+  },
+  {
+    slug: "company-brain",
+    name: "CompanyBrain",
+    title: "The Company Brain",
+    kind: "Pattern",
+    tagline: "A shared, on-disk knowledge base your whole team's AI reasons from.",
+    context:
+      "Knowledge is scattered across git history, docs, Confluence and Jira, and every role — business analyst, architect, tester, developer — needs the same current, grounded picture without re-gathering it or waiting on someone else.",
+    problem:
+      "How do you give every role's AI the same trustworthy organizational knowledge, kept current, without each person rebuilding it and without ever altering the systems of record?",
+    solution:
+      "Ingest the sources once into a shared, on-disk hybrid index that feeds contexts and role views — a business-analyst view, an architect view, a tester view — each a lens on the one brain. It is strictly read-only: it reads and enumerates your sources, never writes back to them, and the derived index lives separately. Individual dev editions consult the central brain over a proxy, so everyone reasons from the same truth.",
+    considerFirst: ["source-enrichment", "context-engineering"],
+    considerNext: ["ai-assisted-roundtrip"],
+    plugins: ["brain", "brain-atlassian", "context", "ai"],
+    config: "Sources (git / files / Confluence / Jira), on-disk hybrid index, role views.",
   },
   {
     slug: "ai-assisted-roundtrip",

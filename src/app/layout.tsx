@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Roadmap MCP — a modular plugin platform for AI-centered software engineering",
+  title: "Roadmap MCP — AI you can build on",
   description:
-    "Roadmap MCP is a plugin framework for building software with AI. Compose the tools a role or workflow needs from swappable plugins, or apply a recipe — a curated bundle of plugins and config. Open source, runs locally, database-free.",
+    "Reliable, inspectable AI tooling for the people who build business software. Context for AI assistants, AI-assisted end-to-end test design, and a shared Company Brain — open source, runs locally, database-free.",
 };
 
 export default function RootLayout({

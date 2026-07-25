@@ -28,9 +28,9 @@ export function SiteNav() {
           <span className="text-lg">Roadmap MCP</span>
         </a>
         <div className="ml-auto hidden items-center gap-7 text-sm text-slate-600 md:flex">
-          <a href="/#architecture" className="hover:text-brand">Architecture</a>
+          <a href="/architecture" className="hover:text-brand">Architecture</a>
           <a href="/patterns" className="hover:text-brand">Patterns</a>
-          <a href="/#how" className="hover:text-brand">How it works</a>
+          <a href="/architecture#how" className="hover:text-brand">How it works</a>
         </div>
         <a
           href="/download"
@@ -53,7 +53,7 @@ export function SiteFooter() {
         </div>
         <div className="flex items-center gap-6">
           <a href={GITHUB_URL} className="hover:text-brand">GitHub</a>
-          <a href="/#architecture" className="hover:text-brand">Architecture</a>
+          <a href="/architecture" className="hover:text-brand">Architecture</a>
           <a href="/patterns" className="hover:text-brand">Patterns</a>
         </div>
         <div>© {new Date().getFullYear()} Roadmap MCP</div>

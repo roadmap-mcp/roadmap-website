@@ -2,8 +2,9 @@ import type { Locator, Page } from "@playwright/test";
 import { BasePage } from "./base.page";
 
 /**
- * The landing page ("/"): hero, promo video, plugin architecture, recipes,
- * how-it-works, local pillars and CTA.
+ * The landing page ("/"): a values-driven page — hero ("AI you can build on."),
+ * manifesto, three audience sections (developers / testers / architects & leaders),
+ * trust band, and CTA. The technical content lives on /architecture.
  */
 export class HomePage extends BasePage {
   readonly path = "/";
@@ -12,40 +13,32 @@ export class HomePage extends BasePage {
     super(page);
   }
 
-  // ── Hero ──────────────────────────────────────────────────────────────
   get heroHeading(): Locator {
-    return this.page.getByRole("heading", {
-      level: 1,
-      name: /modular platform for building software with AI/i,
-    });
+    return this.page.getByRole("heading", { level: 1, name: /AI you can\s*build on/i });
   }
 
-  get explorePatternsCta(): Locator {
-    return this.page.getByRole("link", { name: "Explore the patterns" });
+  /** The hero section's primary CTAs (scoped to the first section, not the nav). */
+  get heroSection(): Locator {
+    return this.page.locator("section").first();
+  }
+  get downloadCta(): Locator {
+    return this.heroSection.getByRole("link", { name: "Download" });
+  }
+  get howItWorksCta(): Locator {
+    return this.heroSection.getByRole("link", { name: "How it works" });
   }
 
-  get browseAllPatternsCta(): Locator {
-    return this.page.getByRole("link", { name: "Browse all patterns" });
+  /** An audience section headline (h2). */
+  audienceHeading(name: string | RegExp): Locator {
+    return this.page.getByRole("heading", { level: 2, name });
+  }
+  /** An audience "learn more" link by its text. */
+  audienceLink(name: string): Locator {
+    return this.page.getByRole("link", { name });
   }
 
-  // ── Sections (anchored by id) ─────────────────────────────────────────
-  get video(): Locator {
-    return this.page.locator("#demo video");
-  }
-
-  get architectureSection(): Locator {
-    return this.page.locator("#architecture");
-  }
-
-  get patternsSection(): Locator {
-    return this.page.locator("#patterns");
-  }
-
-  /** A pattern card (a link) by its title, e.g. "Context Engineering". */
-  patternCard(title: string): Locator {
-    return this.patternsSection.getByRole("link").filter({
-      has: this.page.getByRole("heading", { level: 3, name: title, exact: true }),
-    });
+  get trustHeading(): Locator {
+    return this.page.getByRole("heading", { name: /Local\.\s*Inspectable\.\s*Yours\./i });
   }
 
   /** Nav link in the sticky top bar. */
