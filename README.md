@@ -1,8 +1,9 @@
-# Roadmap · Personal Edition — Website
+# Roadmap MCP — Website
 
-Marketing landing page for **Roadmap Personal Edition**, built with
-**Next.js 16 (App Router) + Tailwind CSS v4**. Single-page technical-startup
-layout: hero, embedded promo video, features, how-it-works, and CTAs.
+Marketing landing page for **Roadmap MCP**, a modular plugin platform for AI-centered
+software engineering, built with **Next.js 16 (App Router) + Tailwind CSS v4**.
+Single-page technical-startup layout: hero, embedded promo video, plugin
+architecture, recipes (the pattern language), how-it-works, and CTAs.
 
 The promo video (`public/roadmap-pe-promo.mp4`, rendered by the `roadmap-pe-promo`
 project) is embedded with a native `<video>` player and a poster frame
@@ -27,7 +28,8 @@ npm start
 ```
 src/app/
   layout.tsx     # metadata + root layout
-  page.tsx       # the full landing page (nav, hero, video, features, how-it-works, CTA, footer)
+  page.tsx       # the full landing page (nav, hero, video, architecture, recipes, how-it-works, CTA, footer)
+  download/      # /download page + /registry/plugins.json proxy
   globals.css    # Tailwind v4 + brand theme tokens (navy #1a3a5c)
 public/
   roadmap-pe-promo.mp4   # embedded promo video

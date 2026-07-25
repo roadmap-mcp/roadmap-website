@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Download · Roadmap Personal Edition",
+  title: "Download · Roadmap MCP",
   description:
-    "Download the Roadmap Personal Edition bundle and run it locally. Database-free, open source, bring your own AI provider.",
+    "Download the Roadmap MCP bundle and run it locally. The framework plus a core set of plugins — database-free, open source, bring your own AI provider.",
 };
 
 // Public distribution repo (roadmap-dist): the installer + plugin registry live here.
@@ -19,7 +19,7 @@ export default function DownloadPage() {
         <section className="mx-auto max-w-3xl px-6 py-16">
           <div className="text-sm font-semibold uppercase tracking-wider text-brand">Download</div>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-slate-900">
-            Run Roadmap on your machine
+            Run Roadmap MCP on your machine
           </h1>
           <p className="mt-4 text-lg text-slate-600">
             A single bundle: the app, its plugins, and a one-command launcher. Database-free
@@ -81,8 +81,10 @@ function PluginsNote() {
     <div className="mt-14 rounded-2xl border border-slate-200 bg-slate-50 p-6">
       <h2 className="text-lg font-semibold text-slate-900">Plugins</h2>
       <p className="mt-2 text-sm text-slate-600">
-        The bundle ships with the core plugins (Contexts, Atlassian, AI, File Viewers,
-        Whisper). More can be installed from the plugin registry inside the app under{" "}
+        The bundle ships with the framework and a core set of plugins (Contexts, Atlassian,
+        AI, File Viewers, Whisper). More — and the plugins a{" "}
+        <a href="/patterns" className="text-brand underline hover:no-underline">pattern</a>{" "}
+        needs — install from the registry inside the app under{" "}
         <span className="font-medium text-slate-800">Settings → Admin</span>. The registry
         index is served at{" "}
         <a href="/registry/plugins.json" className="text-brand underline hover:no-underline">
@@ -98,10 +100,7 @@ function TopBar() {
     <header className="sticky top-0 z-30 border-b border-slate-200/70 bg-white/80 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-6">
         <a href="/" className="flex items-center gap-2 font-semibold text-brand">
-          <span className="text-lg">Roadmap</span>
-          <span className="rounded border border-brand/30 px-1.5 py-0.5 text-[11px] font-semibold text-brand/80">
-            Personal
-          </span>
+          <span className="text-lg">Roadmap MCP</span>
         </a>
         <a
           href={DIST_REPO}
